@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A8B5EAE71D96450B005FD9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5EAE61D96450B005FD9C3 /* AppDelegate.swift */; };
+		A8B5EAE91D96450B005FD9C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5EAE81D96450B005FD9C3 /* ViewController.swift */; };
+		A8B5EAEC1D96450B005FD9C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B5EAEA1D96450B005FD9C3 /* Main.storyboard */; };
+		A8B5EAEE1D96450B005FD9C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B5EAED1D96450B005FD9C3 /* Assets.xcassets */; };
+		A8B5EAF11D96450B005FD9C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B5EAEF1D96450B005FD9C3 /* LaunchScreen.storyboard */; };
+		A8B5EAFC1D96450B005FD9C3 /* RaptterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5EAFB1D96450B005FD9C3 /* RaptterTests.swift */; };
+		A8B5EB071D96450B005FD9C3 /* RaptterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5EB061D96450B005FD9C3 /* RaptterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8B5EAF81D96450B005FD9C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8B5EADB1D96450B005FD9C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8B5EAE21D96450B005FD9C3;
+			remoteInfo = Raptter;
+		};
+		A8B5EB031D96450B005FD9C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8B5EADB1D96450B005FD9C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8B5EAE21D96450B005FD9C3;
+			remoteInfo = Raptter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A8B5EAE31D96450B005FD9C3 /* Raptter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raptter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8B5EAE61D96450B005FD9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A8B5EAE81D96450B005FD9C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A8B5EAEB1D96450B005FD9C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A8B5EAED1D96450B005FD9C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8B5EAF01D96450B005FD9C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A8B5EAF21D96450B005FD9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8B5EAF71D96450B005FD9C3 /* RaptterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8B5EAFB1D96450B005FD9C3 /* RaptterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaptterTests.swift; sourceTree = "<group>"; };
+		A8B5EAFD1D96450B005FD9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8B5EB021D96450B005FD9C3 /* RaptterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8B5EB061D96450B005FD9C3 /* RaptterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaptterUITests.swift; sourceTree = "<group>"; };
+		A8B5EB081D96450B005FD9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A8B5EAE01D96450B005FD9C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8B5EAF41D96450B005FD9C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8B5EAFF1D96450B005FD9C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A8B5EADA1D96450B005FD9C3 = {
+			isa = PBXGroup;
+			children = (
+				A8B5EAE51D96450B005FD9C3 /* Raptter */,
+				A8B5EAFA1D96450B005FD9C3 /* RaptterTests */,
+				A8B5EB051D96450B005FD9C3 /* RaptterUITests */,
+				A8B5EAE41D96450B005FD9C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A8B5EAE41D96450B005FD9C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8B5EAE31D96450B005FD9C3 /* Raptter.app */,
+				A8B5EAF71D96450B005FD9C3 /* RaptterTests.xctest */,
+				A8B5EB021D96450B005FD9C3 /* RaptterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8B5EAE51D96450B005FD9C3 /* Raptter */ = {
+			isa = PBXGroup;
+			children = (
+				A8B5EAE61D96450B005FD9C3 /* AppDelegate.swift */,
+				A8B5EAE81D96450B005FD9C3 /* ViewController.swift */,
+				A8B5EAEA1D96450B005FD9C3 /* Main.storyboard */,
+				A8B5EAED1D96450B005FD9C3 /* Assets.xcassets */,
+				A8B5EAEF1D96450B005FD9C3 /* LaunchScreen.storyboard */,
+				A8B5EAF21D96450B005FD9C3 /* Info.plist */,
+			);
+			path = Raptter;
+			sourceTree = "<group>";
+		};
+		A8B5EAFA1D96450B005FD9C3 /* RaptterTests */ = {
+			isa = PBXGroup;
+			children = (
+				A8B5EAFB1D96450B005FD9C3 /* RaptterTests.swift */,
+				A8B5EAFD1D96450B005FD9C3 /* Info.plist */,
+			);
+			path = RaptterTests;
+			sourceTree = "<group>";
+		};
+		A8B5EB051D96450B005FD9C3 /* RaptterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A8B5EB061D96450B005FD9C3 /* RaptterUITests.swift */,
+				A8B5EB081D96450B005FD9C3 /* Info.plist */,
+			);
+			path = RaptterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A8B5EAE21D96450B005FD9C3 /* Raptter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8B5EB0B1D96450B005FD9C3 /* Build configuration list for PBXNativeTarget "Raptter" */;
+			buildPhases = (
+				A8B5EADF1D96450B005FD9C3 /* Sources */,
+				A8B5EAE01D96450B005FD9C3 /* Frameworks */,
+				A8B5EAE11D96450B005FD9C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Raptter;
+			productName = Raptter;
+			productReference = A8B5EAE31D96450B005FD9C3 /* Raptter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A8B5EAF61D96450B005FD9C3 /* RaptterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8B5EB0E1D96450B005FD9C3 /* Build configuration list for PBXNativeTarget "RaptterTests" */;
+			buildPhases = (
+				A8B5EAF31D96450B005FD9C3 /* Sources */,
+				A8B5EAF41D96450B005FD9C3 /* Frameworks */,
+				A8B5EAF51D96450B005FD9C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8B5EAF91D96450B005FD9C3 /* PBXTargetDependency */,
+			);
+			name = RaptterTests;
+			productName = RaptterTests;
+			productReference = A8B5EAF71D96450B005FD9C3 /* RaptterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A8B5EB011D96450B005FD9C3 /* RaptterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8B5EB111D96450B005FD9C3 /* Build configuration list for PBXNativeTarget "RaptterUITests" */;
+			buildPhases = (
+				A8B5EAFE1D96450B005FD9C3 /* Sources */,
+				A8B5EAFF1D96450B005FD9C3 /* Frameworks */,
+				A8B5EB001D96450B005FD9C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8B5EB041D96450B005FD9C3 /* PBXTargetDependency */,
+			);
+			name = RaptterUITests;
+			productName = RaptterUITests;
+			productReference = A8B5EB021D96450B005FD9C3 /* RaptterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A8B5EADB1D96450B005FD9C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = matsuosh;
+				TargetAttributes = {
+					A8B5EAE21D96450B005FD9C3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3WLQSD636A;
+						ProvisioningStyle = Automatic;
+					};
+					A8B5EAF61D96450B005FD9C3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3WLQSD636A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A8B5EAE21D96450B005FD9C3;
+					};
+					A8B5EB011D96450B005FD9C3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3WLQSD636A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A8B5EAE21D96450B005FD9C3;
+					};
+				};
+			};
+			buildConfigurationList = A8B5EADE1D96450B005FD9C3 /* Build configuration list for PBXProject "Raptter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A8B5EADA1D96450B005FD9C3;
+			productRefGroup = A8B5EAE41D96450B005FD9C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A8B5EAE21D96450B005FD9C3 /* Raptter */,
+				A8B5EAF61D96450B005FD9C3 /* RaptterTests */,
+				A8B5EB011D96450B005FD9C3 /* RaptterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A8B5EAE11D96450B005FD9C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8B5EAF11D96450B005FD9C3 /* LaunchScreen.storyboard in Resources */,
+				A8B5EAEE1D96450B005FD9C3 /* Assets.xcassets in Resources */,
+				A8B5EAEC1D96450B005FD9C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8B5EAF51D96450B005FD9C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8B5EB001D96450B005FD9C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8B5EADF1D96450B005FD9C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8B5EAE91D96450B005FD9C3 /* ViewController.swift in Sources */,
+				A8B5EAE71D96450B005FD9C3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8B5EAF31D96450B005FD9C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8B5EAFC1D96450B005FD9C3 /* RaptterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8B5EAFE1D96450B005FD9C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8B5EB071D96450B005FD9C3 /* RaptterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A8B5EAF91D96450B005FD9C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8B5EAE21D96450B005FD9C3 /* Raptter */;
+			targetProxy = A8B5EAF81D96450B005FD9C3 /* PBXContainerItemProxy */;
+		};
+		A8B5EB041D96450B005FD9C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8B5EAE21D96450B005FD9C3 /* Raptter */;
+			targetProxy = A8B5EB031D96450B005FD9C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A8B5EAEA1D96450B005FD9C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8B5EAEB1D96450B005FD9C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A8B5EAEF1D96450B005FD9C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8B5EAF01D96450B005FD9C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A8B5EB091D96450B005FD9C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A8B5EB0A1D96450B005FD9C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A8B5EB0C1D96450B005FD9C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3WLQSD636A;
+				INFOPLIST_FILE = Raptter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matsuosh.Raptter.Raptter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A8B5EB0D1D96450B005FD9C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3WLQSD636A;
+				INFOPLIST_FILE = Raptter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matsuosh.Raptter.Raptter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A8B5EB0F1D96450B005FD9C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3WLQSD636A;
+				INFOPLIST_FILE = RaptterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matsuosh.Raptter.RaptterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Raptter.app/Raptter";
+			};
+			name = Debug;
+		};
+		A8B5EB101D96450B005FD9C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3WLQSD636A;
+				INFOPLIST_FILE = RaptterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matsuosh.Raptter.RaptterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Raptter.app/Raptter";
+			};
+			name = Release;
+		};
+		A8B5EB121D96450B005FD9C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3WLQSD636A;
+				INFOPLIST_FILE = RaptterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matsuosh.Raptter.RaptterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Raptter;
+			};
+			name = Debug;
+		};
+		A8B5EB131D96450B005FD9C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3WLQSD636A;
+				INFOPLIST_FILE = RaptterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matsuosh.Raptter.RaptterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Raptter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A8B5EADE1D96450B005FD9C3 /* Build configuration list for PBXProject "Raptter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8B5EB091D96450B005FD9C3 /* Debug */,
+				A8B5EB0A1D96450B005FD9C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8B5EB0B1D96450B005FD9C3 /* Build configuration list for PBXNativeTarget "Raptter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8B5EB0C1D96450B005FD9C3 /* Debug */,
+				A8B5EB0D1D96450B005FD9C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A8B5EB0E1D96450B005FD9C3 /* Build configuration list for PBXNativeTarget "RaptterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8B5EB0F1D96450B005FD9C3 /* Debug */,
+				A8B5EB101D96450B005FD9C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A8B5EB111D96450B005FD9C3 /* Build configuration list for PBXNativeTarget "RaptterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8B5EB121D96450B005FD9C3 /* Debug */,
+				A8B5EB131D96450B005FD9C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A8B5EADB1D96450B005FD9C3 /* Project object */;
+}
