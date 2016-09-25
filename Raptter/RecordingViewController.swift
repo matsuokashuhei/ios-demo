@@ -163,8 +163,10 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
             let image = try! generator.copyCGImage(at: asset.duration, actualTime: nil)
             return UIImagePNGRepresentation(UIImage(cgImage: image))!
         }()
-        let path = outputFileURL.lastPathComponent.replacingOccurrences(of: "mov", with: "png")
-        FileManager.default.createFile(atPath: path, contents: thumbnail, attributes: nil)
+        let fileName = outputFileURL.lastPathComponent.replacingOccurrences(of: "mov", with: "png")
+        let fileURL = URL(fileURLWithPath: fileName, relativeTo: URL(fileURLWithPath: NSTemporaryDirectory()))
+        let result = FileManager.default.createFile(atPath: fileURL.path, contents: thumbnail, attributes: nil)
+        print("result: \(result), atPath: \(fileURL.path)")
         performSegue(withIdentifier: "playMovie", sender: outputFileURL)
     }
 

@@ -12,7 +12,6 @@ class MoviesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            //tableView.register(MovieViewCell, forCellReuseIdentifier: "MovieViewCell")
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -24,7 +23,9 @@ class MoviesViewController: UIViewController {
         super.viewDidLoad()
 
         if let contents = try? FileManager.default.contentsOfDirectory(atPath: NSTemporaryDirectory()) {
-            filePaths = contents.sorted()
+            filePaths = contents.filter({ (filePath) -> Bool in
+                return filePath.hasSuffix("mov")
+            })
         }
         // Do any additional setup after loading the view.
     }
@@ -72,17 +73,21 @@ extension MoviesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.songTableViewCell, forIndexPath: indexPath)!
-        //cell.configure(song)
+        /*
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieViewCell", for: indexPath) as! MovieViewCell
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "MovieViewCell")
         let path = filePaths[indexPath.row]
         let fileURL = URL(fileURLWithPath: path.replacingOccurrences(of: "mov", with: "png"), relativeTo: URL(fileURLWithPath: NSTemporaryDirectory()))
         cell.thumbnailView = UIImageView(image: UIImage(contentsOfFile: fileURL.path))
         return cell
-        //let cell = UITableViewCell()
-        //cell.textLabel?.text = filePaths[indexPath.row]
-        //return UITableViewCell()
+        */
+        let cell = UITableViewCell()
+        cell.textLabel?.text = filePaths[indexPath.row]
+        let path = filePaths[indexPath.row]
+        let fileURL = URL(fileURLWithPath: path.replacingOccurrences(of: "mov", with: "png"), relativeTo: URL(fileURLWithPath: NSTemporaryDirectory()))
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            cell.imageView?.image = UIImage(contentsOfFile: fileURL.path)
+        }
+        return cell
     }
 
 }

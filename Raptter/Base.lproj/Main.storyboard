@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,29 +76,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O5V-gX-erI">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieViewCell" rowHeight="96" id="O4p-cR-uMf" customClass="MovieViewCell" customModule="Raptter" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hNG-d1-fT1">
                                         <rect key="frame" x="0.0" y="28" width="375" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O4p-cR-uMf" id="jLL-2g-U79">
-                                            <frame key="frameInset" width="375" height="96"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hNG-d1-fT1" id="Pqk-lS-1jo">
+                                            <frame key="frameInset" width="375" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Otf-pn-7tp">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Otf-pn-7tp" secondAttribute="height" multiplier="1:1" id="GcO-Lz-brH"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Otf-pn-7tp" firstAttribute="top" secondItem="jLL-2g-U79" secondAttribute="topMargin" id="CAb-Ac-EGD"/>
-                                                <constraint firstItem="Otf-pn-7tp" firstAttribute="leading" secondItem="jLL-2g-U79" secondAttribute="leadingMargin" id="dKi-Yy-9yy"/>
-                                                <constraint firstItem="Otf-pn-7tp" firstAttribute="bottom" secondItem="jLL-2g-U79" secondAttribute="bottomMargin" id="tOX-BR-Q3Y"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="thumbnailView" destination="Otf-pn-7tp" id="Lz5-4N-8yh"/>
-                                            <segue destination="SZP-ey-JVU" kind="show" identifier="playMovie" id="COd-4n-379"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -115,6 +98,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="0bI-hq-j7a"/>
                     <connections>
                         <outlet property="tableView" destination="O5V-gX-erI" id="B3p-Kp-nHq"/>
+                        <segue destination="SZP-ey-JVU" kind="show" identifier="playMovie" id="Rje-U4-BYr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQc-Hv-bha" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,6 +128,6 @@
         <image name="microphone" width="475" height="475"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="COd-4n-379"/>
+        <segue reference="Rje-U4-BYr"/>
     </inferredMetricsTieBreakers>
 </document>
