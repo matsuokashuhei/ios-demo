@@ -60,7 +60,7 @@ class RecordingViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        prepareToIntroPlayer()
+        //prepareToIntroPlayer()
         prepareToMainPlayer()
     }
 
@@ -70,7 +70,8 @@ class RecordingViewController: UIViewController {
 
     func recordingButtonTapped(button: UIButton) {
         if !isRecoding {
-            introPlayer?.play()
+//            introPlayer?.play()
+            startRecording()
         } else {
             stopRecording()
         }
@@ -95,6 +96,8 @@ class RecordingViewController: UIViewController {
             return URL(fileURLWithPath: NSTemporaryDirectory() + filename)
         }()
         output?.startRecording(toOutputFileURL: fileURL, recordingDelegate: self)
+        mainPlayer?.play()
+        print("startRecording")
     }
 
     func stopRecording() {
@@ -149,7 +152,6 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
         print("capture")
-        mainPlayer?.play()
     }
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {

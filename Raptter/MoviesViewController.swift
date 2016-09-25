@@ -64,6 +64,15 @@ extension MoviesViewController: UITableViewDelegate {
         }
         performSegue(withIdentifier: "playMovie", sender: fileURLs)
     }
+
+    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+
 }
 
 extension MoviesViewController: UITableViewDataSource {
