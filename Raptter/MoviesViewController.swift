@@ -12,6 +12,7 @@ class MoviesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
+            //tableView.register(MovieViewCell, forCellReuseIdentifier: "MovieViewCell")
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -71,12 +72,21 @@ extension MoviesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = filePaths[indexPath.row]
-        return UITableViewCell()
+        //let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.songTableViewCell, forIndexPath: indexPath)!
+        //cell.configure(song)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieViewCell", for: indexPath) as! MovieViewCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "MovieViewCell")
+        let path = filePaths[indexPath.row]
+        let fileURL = URL(fileURLWithPath: path.replacingOccurrences(of: "mov", with: "png"), relativeTo: URL(fileURLWithPath: NSTemporaryDirectory()))
+        cell.thumbnailView = UIImageView(image: UIImage(contentsOfFile: fileURL.path))
+        return cell
+        //let cell = UITableViewCell()
+        //cell.textLabel?.text = filePaths[indexPath.row]
+        //return UITableViewCell()
     }
 
 }
 
-class MovieViewCell: UITableViewCell {    
+class MovieViewCell: UITableViewCell {
+    @IBOutlet weak var thumbnailView: UIImageView!
 }

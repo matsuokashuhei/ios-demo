@@ -56,17 +56,6 @@ class RecordingViewController: UIViewController {
         view.layer.addSublayer(previewLayer!)
         view.bringSubview(toFront: recordingButton)
 
-        // トラックを読み込む。
-        /*
-        let resource = "coldcut1"
-        if let bundle = Bundle.main.path(forResource: resource, ofType: "wav") {
-            let fileURL = URL(fileURLWithPath: bundle)
-            audioPlayer = try! AVAudioPlayer(contentsOf: fileURL)
-            audioPlayer?.delegate = self
-            audioPlayer?.prepareToPlay()
-        }
-        */
-
         session.startRunning()
     }
 
@@ -81,20 +70,8 @@ class RecordingViewController: UIViewController {
 
     func recordingButtonTapped(button: UIButton) {
         if !isRecoding {
-            /*
-            isRecoding = true
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: { 
-                self.recordingButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-                }, completion: nil)
-            startRecording()
-            */
             introPlayer?.play()
         } else {
-//            isRecoding = false
-//            UIView.animate(withDuration: 0.5, delay: 1.0, options: [], animations: { 
-//                self.recordingButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-//                }, completion: nil)
-//            recordingButton.layer.removeAllAnimations()
             stopRecording()
         }
     }
@@ -179,6 +156,15 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
         if (error) != nil {
             return
         }
+        let thumbnail: Data = {
+            let asset = AVAsset(url: outputFileURL)
+            let generator = AVAssetImageGenerator(asset: asset)
+            generator.appliesPreferredTrackTransform = true
+            let image = try! generator.copyCGImage(at: asset.duration, actualTime: nil)
+            return UIImagePNGRepresentation(UIImage(cgImage: image))!
+        }()
+        let path = outputFileURL.lastPathComponent.replacingOccurrences(of: "mov", with: "png")
+        FileManager.default.createFile(atPath: path, contents: thumbnail, attributes: nil)
         performSegue(withIdentifier: "playMovie", sender: outputFileURL)
     }
 
