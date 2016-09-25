@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8273F361D980F5C008FA896 /* main2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8273F351D980F5C008FA896 /* main2.wav */; };
+		A8273F381D980F69008FA896 /* intro2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8273F371D980F69008FA896 /* intro2.wav */; };
 		A8B5EAE71D96450B005FD9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5EAE61D96450B005FD9C3 /* AppDelegate.swift */; };
 		A8B5EAE91D96450B005FD9C3 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5EAE81D96450B005FD9C3 /* RecordingViewController.swift */; };
 		A8B5EAEC1D96450B005FD9C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B5EAEA1D96450B005FD9C3 /* Main.storyboard */; };
@@ -19,7 +21,9 @@
 		A8B5EB211D978E2C005FD9C3 /* coldcut1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8B5EB201D978E2C005FD9C3 /* coldcut1.mp3 */; };
 		A8E7A3B11D979526001E85A4 /* coldcut3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E7A3B01D979526001E85A4 /* coldcut3.mp3 */; };
 		A8E7A3B31D97953B001E85A4 /* coldcut2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E7A3B21D97953B001E85A4 /* coldcut2.mp3 */; };
-		A8E7A3B51D979710001E85A4 /* intro3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8E7A3B41D979710001E85A4 /* intro3.mp3 */; };
+		A8E7A3B91D97E555001E85A4 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E7A3B81D97E555001E85A4 /* AudioPlayer.swift */; };
+		A8E7A3BC1D97EAF7001E85A4 /* main1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8E7A3BB1D97EAF7001E85A4 /* main1.wav */; };
+		A8E7A3BE1D97EBC8001E85A4 /* intro1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8E7A3BD1D97EBC8001E85A4 /* intro1.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8273F351D980F5C008FA896 /* main2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main2.wav; sourceTree = "<group>"; };
+		A8273F371D980F69008FA896 /* intro2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = intro2.wav; sourceTree = "<group>"; };
 		A8B5EAE31D96450B005FD9C3 /* Raptter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raptter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B5EAE61D96450B005FD9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B5EAE81D96450B005FD9C3 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +64,9 @@
 		A8B5EB201D978E2C005FD9C3 /* coldcut1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coldcut1.mp3; sourceTree = "<group>"; };
 		A8E7A3B01D979526001E85A4 /* coldcut3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coldcut3.mp3; sourceTree = "<group>"; };
 		A8E7A3B21D97953B001E85A4 /* coldcut2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coldcut2.mp3; sourceTree = "<group>"; };
-		A8E7A3B41D979710001E85A4 /* intro3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = intro3.mp3; sourceTree = "<group>"; };
+		A8E7A3B81D97E555001E85A4 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		A8E7A3BB1D97EAF7001E85A4 /* main1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main1.wav; sourceTree = "<group>"; };
+		A8E7A3BD1D97EBC8001E85A4 /* intro1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = intro1.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +123,16 @@
 				A8B5EB1C1D96D49A005FD9C3 /* MovieViewController.swift */,
 				A8B5EAEA1D96450B005FD9C3 /* Main.storyboard */,
 				A8B5EAED1D96450B005FD9C3 /* Assets.xcassets */,
-				A8E7A3B41D979710001E85A4 /* intro3.mp3 */,
+				A8E7A3BB1D97EAF7001E85A4 /* main1.wav */,
+				A8273F351D980F5C008FA896 /* main2.wav */,
+				A8E7A3BD1D97EBC8001E85A4 /* intro1.wav */,
+				A8273F371D980F69008FA896 /* intro2.wav */,
 				A8B5EB201D978E2C005FD9C3 /* coldcut1.mp3 */,
 				A8E7A3B21D97953B001E85A4 /* coldcut2.mp3 */,
 				A8E7A3B01D979526001E85A4 /* coldcut3.mp3 */,
 				A8B5EAEF1D96450B005FD9C3 /* LaunchScreen.storyboard */,
 				A8B5EAF21D96450B005FD9C3 /* Info.plist */,
+				A8E7A3B81D97E555001E85A4 /* AudioPlayer.swift */,
 			);
 			path = Raptter;
 			sourceTree = "<group>";
@@ -253,13 +265,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8273F361D980F5C008FA896 /* main2.wav in Resources */,
+				A8273F381D980F69008FA896 /* intro2.wav in Resources */,
+				A8E7A3BE1D97EBC8001E85A4 /* intro1.wav in Resources */,
 				A8B5EAF11D96450B005FD9C3 /* LaunchScreen.storyboard in Resources */,
 				A8E7A3B31D97953B001E85A4 /* coldcut2.mp3 in Resources */,
 				A8B5EAEE1D96450B005FD9C3 /* Assets.xcassets in Resources */,
-				A8E7A3B51D979710001E85A4 /* intro3.mp3 in Resources */,
 				A8B5EAEC1D96450B005FD9C3 /* Main.storyboard in Resources */,
 				A8E7A3B11D979526001E85A4 /* coldcut3.mp3 in Resources */,
 				A8B5EB211D978E2C005FD9C3 /* coldcut1.mp3 in Resources */,
+				A8E7A3BC1D97EAF7001E85A4 /* main1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +301,7 @@
 			files = (
 				A8B5EAE91D96450B005FD9C3 /* RecordingViewController.swift in Sources */,
 				A8B5EAE71D96450B005FD9C3 /* AppDelegate.swift in Sources */,
+				A8E7A3B91D97E555001E85A4 /* AudioPlayer.swift in Sources */,
 				A8B5EB1B1D96CF9D005FD9C3 /* MoviesViewController.swift in Sources */,
 				A8B5EB1D1D96D49A005FD9C3 /* MovieViewController.swift in Sources */,
 			);

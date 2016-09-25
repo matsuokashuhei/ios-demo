@@ -24,7 +24,10 @@ class RecordingViewController: UIViewController {
     var isRecoding = false
     var output: AVCaptureMovieFileOutput?
 
-    var audioPlayer: AVAudioPlayer?
+    //var audioPlayer: AVAudioPlayer?
+    
+    var introPlayer: AVAudioPlayer?
+    var mainPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,14 +57,22 @@ class RecordingViewController: UIViewController {
         view.bringSubview(toFront: recordingButton)
 
         // トラックを読み込む。
+        /*
         let resource = "coldcut1"
-        if let bundle = Bundle.main.path(forResource: resource, ofType: "mp3") {
+        if let bundle = Bundle.main.path(forResource: resource, ofType: "wav") {
             let fileURL = URL(fileURLWithPath: bundle)
             audioPlayer = try! AVAudioPlayer(contentsOf: fileURL)
             audioPlayer?.delegate = self
             audioPlayer?.prepareToPlay()
         }
+        */
+
         session.startRunning()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        prepareToIntroPlayer()
+        prepareToMainPlayer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,11 +81,14 @@ class RecordingViewController: UIViewController {
 
     func recordingButtonTapped(button: UIButton) {
         if !isRecoding {
+            /*
             isRecoding = true
             UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: { 
                 self.recordingButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
                 }, completion: nil)
             startRecording()
+            */
+            introPlayer?.play()
         } else {
 //            isRecoding = false
 //            UIView.animate(withDuration: 0.5, delay: 1.0, options: [], animations: { 
@@ -86,6 +100,15 @@ class RecordingViewController: UIViewController {
     }
 
     func startRecording() {
+        isRecoding = true
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.0,
+            options: [.repeat, .autoreverse, .allowUserInteraction],
+            animations: {
+                self.recordingButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            },
+            completion: nil)
         let fileURL: URL = {
             let filename: String = {
                 let formatter = DateFormatter()
@@ -99,11 +122,11 @@ class RecordingViewController: UIViewController {
 
     func stopRecording() {
         isRecoding = false
+        output?.stopRecording()
         UIView.animate(withDuration: 0.5, delay: 1.0, options: [], animations: {
             self.recordingButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }, completion: nil)
         recordingButton.layer.removeAllAnimations()
-        output?.stopRecording()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,13 +136,43 @@ class RecordingViewController: UIViewController {
         }
     }
 
+    private func prepareToIntroPlayer() {
+        if let player = introPlayer {
+            player.delegate = nil
+        }
+        let resource = "intro2"
+        if let bundle = Bundle.main.path(forResource: resource, ofType: "wav") {
+            let fileURL = URL(fileURLWithPath: bundle)
+            introPlayer = try! AVAudioPlayer(contentsOf: fileURL)
+            introPlayer?.delegate = self
+            introPlayer?.prepareToPlay()
+        }
+    }
+
+    func playIntro() {
+        introPlayer?.play()
+    }
+
+    private func prepareToMainPlayer() {
+        if let player = mainPlayer {
+            player.delegate = nil
+        }
+        let resource = "main2"
+        if let bundle = Bundle.main.path(forResource: resource, ofType: "wav") {
+            let fileURL = URL(fileURLWithPath: bundle)
+            mainPlayer = try! AVAudioPlayer(contentsOf: fileURL)
+            mainPlayer?.delegate = self
+            mainPlayer?.prepareToPlay()
+        }
+    }
+
 }
 
 extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
-        print("fileURL: \(fileURL)")
-        audioPlayer?.play()
+        print("capture")
+        mainPlayer?.play()
     }
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
@@ -134,7 +187,15 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
 extension RecordingViewController: AVAudioPlayerDelegate {
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        stopRecording()
+        if isIntro(fileURL: player.url!) {
+            startRecording()
+        } else {
+            stopRecording()
+        }
+    }
+
+    private func isIntro(fileURL: URL) -> Bool {
+        return fileURL.lastPathComponent == "intro2.wav"
     }
 
 }
