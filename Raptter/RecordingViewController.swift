@@ -85,7 +85,7 @@ class RecordingViewController: UIViewController {
             delay: 0.0,
             options: [.repeat, .autoreverse, .allowUserInteraction],
             animations: {
-                self.recordingButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                self.recordingButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             },
             completion: nil)
         let fileURL: URL = {
@@ -138,7 +138,7 @@ class RecordingViewController: UIViewController {
         if let player = mainPlayer {
             player.delegate = nil
         }
-        let resource = "main2"
+        let resource = "track1-2"
         if let bundle = Bundle.main.path(forResource: resource, ofType: "wav") {
             let fileURL = URL(fileURLWithPath: bundle)
             mainPlayer = try! AVAudioPlayer(contentsOf: fileURL)
