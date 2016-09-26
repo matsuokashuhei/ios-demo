@@ -36,6 +36,11 @@ class MovieViewController: UIViewController {
                 AVPlayerItem(url: fileURL)
             })
             controller.player = AVQueuePlayer(items: items)
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(MovieViewController.playItemDidReachEnd),
+                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                object: items.last)
             return controller
         }()
         controller.view.frame = view.frame
@@ -48,6 +53,11 @@ class MovieViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func playItemDidReachEnd(sender: Any) {
+        NotificationCenter.default.removeObserver(self)
+        //NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: sender as! AVPlayerItem)
+        navigationController?.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation

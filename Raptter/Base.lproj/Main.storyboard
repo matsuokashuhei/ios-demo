@@ -42,6 +42,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wtp-5p-qr7" secondAttribute="height" multiplier="1:1" id="D8K-rN-IVO"/>
                                 </constraints>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="circle"/>
                             </button>
                         </subviews>
@@ -49,7 +50,7 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wtp-5p-qr7" secondAttribute="bottom" constant="20" id="bbw-t4-8JN"/>
                             <constraint firstItem="wtp-5p-qr7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gJj-9g-Jbo"/>
-                            <constraint firstItem="wtp-5p-qr7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.1" id="thQ-Ed-XEH"/>
+                            <constraint firstItem="wtp-5p-qr7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.15" id="thQ-Ed-XEH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="RAP" image="mic" id="aIx-JR-ZHo"/>

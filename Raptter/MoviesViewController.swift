@@ -14,28 +14,37 @@ class MoviesViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.tableFooterView = UIView(frame: CGRect.zero)
         }
     }
 
     var filePaths = [String]()
+    var removedFiles = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let contents = try? FileManager.default.contentsOfDirectory(atPath: NSTemporaryDirectory()) {
-            filePaths = contents.filter({ (filePath) -> Bool in
-                return filePath.hasSuffix("mov")
-            })
-        }
+        filePaths = listMovieFiles()
+        tableView.reloadData()
+        setEditing(false, animated: true)
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func listMovieFiles() -> [String] {
+        var files = [String]()
+        if let contents = try? FileManager.default.contentsOfDirectory(atPath: NSTemporaryDirectory()) {
+            files = contents.filter({ (filePath) -> Bool in
+                return filePath.hasSuffix("mov")
+            })
+        }
+        return files
     }
 
     /*
@@ -55,6 +64,42 @@ class MoviesViewController: UIViewController {
         }
     }
 
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: true)
+        if editing {
+            navigationController?.navigationBar.topItem?.leftBarButtonItem =
+                UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(MoviesViewController.cancelEditing))
+            navigationController?.navigationBar.topItem?.rightBarButtonItem =
+                UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(MoviesViewController.finishEditing))
+        } else {
+            navigationController?.navigationBar.topItem?.leftBarButtonItem = nil
+            navigationController?.navigationBar.topItem?.rightBarButtonItem =
+                UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(MoviesViewController.startEditing))
+            
+        }
+    }
+
+    func startEditing() {
+        setEditing(true, animated: true)
+        removedFiles = []
+    }
+
+    func finishEditing() {
+        removedFiles.forEach { (removedFile) in
+            try! FileManager.default.removeItem(at: URL(fileURLWithPath: removedFile, relativeTo: URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)))
+            let thumbnail = removedFile.replacingOccurrences(of: "mov", with: "png")
+            try! FileManager.default.removeItem(at: URL(fileURLWithPath: thumbnail, relativeTo: URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)))
+        }
+        setEditing(false, animated: true)
+    }
+
+    func cancelEditing() {
+        removedFiles = []
+        tableView.reloadData()
+        setEditing(false, animated: true)
+    }
+
 }
 
 extension MoviesViewController: UITableViewDelegate {
@@ -68,14 +113,22 @@ extension MoviesViewController: UITableViewDelegate {
         performSegue(withIdentifier: "playMovie", sender: fileURLs)
     }
 
-    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.delete
+        if tableView.isEditing {
+            return .delete
+        } else {
+            return .none
+        }
     }
 
+    @objc(tableView:commitEditingStyle:forRowAtIndexPath:) func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            removedFiles.append(filePaths[indexPath.row])
+            filePaths.remove(at: indexPath.row)
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+        }
+    }
 }
 
 extension MoviesViewController: UITableViewDataSource {

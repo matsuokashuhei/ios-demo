@@ -10,6 +10,7 @@
 		A8273F361D980F5C008FA896 /* main2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8273F351D980F5C008FA896 /* main2.wav */; };
 		A8273F381D980F69008FA896 /* intro2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8273F371D980F69008FA896 /* intro2.wav */; };
 		A8273F3E1D9969D4008FA896 /* track1-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8273F3D1D9969D4008FA896 /* track1-2.wav */; };
+		A8273F401D997F80008FA896 /* track2-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8273F3F1D997F80008FA896 /* track2-2.wav */; };
 		A8B5EAE71D96450B005FD9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5EAE61D96450B005FD9C3 /* AppDelegate.swift */; };
 		A8B5EAE91D96450B005FD9C3 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5EAE81D96450B005FD9C3 /* RecordingViewController.swift */; };
 		A8B5EAEC1D96450B005FD9C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B5EAEA1D96450B005FD9C3 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		A8273F351D980F5C008FA896 /* main2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main2.wav; sourceTree = "<group>"; };
 		A8273F371D980F69008FA896 /* intro2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = intro2.wav; sourceTree = "<group>"; };
 		A8273F3D1D9969D4008FA896 /* track1-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "track1-2.wav"; sourceTree = "<group>"; };
+		A8273F3F1D997F80008FA896 /* track2-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "track2-2.wav"; sourceTree = "<group>"; };
 		A8B5EAE31D96450B005FD9C3 /* Raptter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raptter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B5EAE61D96450B005FD9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B5EAE81D96450B005FD9C3 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				A8B5EAEA1D96450B005FD9C3 /* Main.storyboard */,
 				A8B5EAED1D96450B005FD9C3 /* Assets.xcassets */,
 				A8273F3D1D9969D4008FA896 /* track1-2.wav */,
+				A8273F3F1D997F80008FA896 /* track2-2.wav */,
 				A8E7A3BB1D97EAF7001E85A4 /* main1.wav */,
 				A8273F351D980F5C008FA896 /* main2.wav */,
 				A8E7A3BD1D97EBC8001E85A4 /* intro1.wav */,
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8273F401D997F80008FA896 /* track2-2.wav in Resources */,
 				A8273F361D980F5C008FA896 /* main2.wav in Resources */,
 				A8273F381D980F69008FA896 /* intro2.wav in Resources */,
 				A8E7A3BE1D97EBC8001E85A4 /* intro1.wav in Resources */,
