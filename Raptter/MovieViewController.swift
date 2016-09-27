@@ -55,8 +55,8 @@ class MovieViewController: UIViewController {
     
     func playItemDidReachEnd(sender: Any) {
         NotificationCenter.default.removeObserver(self)
+        dismiss(animated: true, completion: nil)
         //NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: sender as! AVPlayerItem)
-        navigationController?.popViewController(animated: true)
     }
 
     /*

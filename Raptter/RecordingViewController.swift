@@ -73,8 +73,32 @@ class RecordingViewController: UIViewController {
         if !isRecoding {
 //            introPlayer?.play()
             startRecording()
+            /*
+            updateTime {
+                self.startRecording()
+            }
+            recordingButton.setImage(UIImage(named: "circle2"), for: .normal)
+            */
         } else {
             stopRecording()
+        }
+    }
+
+    var timeInSeconds = 3
+    let timeInterval = 1
+    func updateTime(completion: @escaping () -> ()) {
+        print("updateTime")
+        timeInSeconds -= timeInterval
+        print("\(timeInSeconds)")
+        if timeInSeconds > 0 {
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+                self.recordingButton.setImage(UIImage(named: "circle2"), for: .normal)
+                self.updateTime(completion: completion)
+            }
+        } else {
+            timeInSeconds = 3
+            self.recordingButton.setImage(UIImage(named: "circle"), for: .normal)
+            completion()
         }
     }
 
