@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,23 +46,33 @@
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="circle"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="id9-oB-pMx">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="GTO-MK-wIn"/>
+                                    <constraint firstAttribute="width" constant="60" id="HxL-7b-Phd"/>
+                                </constraints>
+                                <state key="normal" title="TRACK"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wtp-5p-qr7" secondAttribute="bottom" constant="20" id="bbw-t4-8JN"/>
                             <constraint firstItem="wtp-5p-qr7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gJj-9g-Jbo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="id9-oB-pMx" secondAttribute="bottom" constant="20" id="jUh-gG-6AD"/>
                             <constraint firstItem="wtp-5p-qr7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.15" id="thQ-Ed-XEH"/>
+                            <constraint firstItem="id9-oB-pMx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zZW-IQ-nxL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="RAP" image="mic" id="aIx-JR-ZHo"/>
                     <connections>
                         <outlet property="recordingButton" destination="wtp-5p-qr7" id="hzc-Yf-xij"/>
+                        <outlet property="trackButton" destination="id9-oB-pMx" id="dR0-ce-wH2"/>
                         <segue destination="SZP-ey-JVU" kind="show" identifier="playMovie" id="zpX-bn-reT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="36"/>
+            <point key="canvasLocation" x="32.799999999999997" y="35.532233883058474"/>
         </scene>
         <!--WATCH-->
         <scene sceneID="sBR-9o-vnP">

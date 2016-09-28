@@ -20,8 +20,22 @@ class RecordingViewController: UIViewController {
                 for: .touchUpInside)
         }
     }
+    @IBOutlet weak var trackButton: UIButton! {
+        didSet {
+            trackButton.setTitle("TRACK1", for: .normal)
+            trackButton.addTarget(
+                self,
+                action: #selector(RecordingViewController.trackButtonTapped(button:)),
+                for: .touchUpInside)
+        }
+    }
 
-    var isRecoding = false
+    var isRecoding = false {
+        didSet {
+            trackButton.isEnabled = isRecoding == false
+        }
+    }
+    var isStopped = false
     var output: AVCaptureMovieFileOutput?
 
     //var audioPlayer: AVAudioPlayer?
@@ -55,6 +69,7 @@ class RecordingViewController: UIViewController {
         previewLayer?.frame = view.layer.frame
         view.layer.addSublayer(previewLayer!)
         view.bringSubview(toFront: recordingButton)
+        view.bringSubview(toFront: trackButton)
 
         session.startRunning()
     }
@@ -80,8 +95,18 @@ class RecordingViewController: UIViewController {
             recordingButton.setImage(UIImage(named: "circle2"), for: .normal)
             */
         } else {
+            isStopped = true
             stopRecording()
         }
+    }
+
+    func trackButtonTapped(button: UIButton) {
+        if button.titleLabel!.text == "TRACK1" {
+            button.setTitle("TRACK2", for: .normal)
+        } else {
+            button.setTitle("TRACK1", for: .normal)
+        }
+        prepareToMainPlayer()
     }
 
     var timeInSeconds = 3
@@ -158,11 +183,17 @@ class RecordingViewController: UIViewController {
         introPlayer?.play()
     }
 
-    private func prepareToMainPlayer() {
+    func prepareToMainPlayer() {
         if let player = mainPlayer {
             player.delegate = nil
         }
-        let resource = "track1-2"
+        //let resource = "track1-2"
+        let resource: String
+        if trackButton.currentTitle == "TRACK1" {
+            resource = "track1-2"
+        } else {
+            resource = "track2-2"
+        }
         if let bundle = Bundle.main.path(forResource: resource, ofType: "wav") {
             let fileURL = URL(fileURLWithPath: bundle)
             mainPlayer = try! AVAudioPlayer(contentsOf: fileURL)
@@ -181,6 +212,12 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         if (error) != nil {
+            return
+        }
+        if isStopped {
+            mainPlayer?.stop()
+            prepareToMainPlayer()
+            try! FileManager.default.removeItem(at: outputFileURL)
             return
         }
         let thumbnail: Data = {
@@ -205,6 +242,7 @@ extension RecordingViewController: AVAudioPlayerDelegate {
         if isIntro(fileURL: player.url!) {
             startRecording()
         } else {
+            isStopped = false
             stopRecording()
         }
     }
