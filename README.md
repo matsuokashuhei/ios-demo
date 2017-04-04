@@ -7,8 +7,10 @@ A demo app to take a rap video.
 ### Taking a video
 
 1. Please install this app on your iPhone.
-2. When you start the application, please push the red button. Music is played, and recording also begins
-3. Recording will end when music is over. And the recorded video will be played. Let's enjoy your videos.
+2. Please launch the application. The RAP recording screen is displayed.
+3. First let's choose a beat, TRACK 1 and TRACK 2. TRACK 1 is displayed in the lower right. Tap to change to TRACK 2.
+4. Ready. Let's push the red button. beat is played and video recording starts. Now please rap.
+5. Recording will end when beat is over. And the recorded video will be played. Let's enjoy your videos.
 
 ### Play videos
 1. Please tap the WATCH button. List the videos you recorded.
